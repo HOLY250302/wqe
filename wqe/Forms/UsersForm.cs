@@ -17,7 +17,7 @@ namespace wqe.Forms
         public UsersForm()
         {
             InitializeComponent();
-           
+            UpdateTable();
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -41,7 +41,31 @@ namespace wqe.Forms
             foreach (DataRow row in table.Rows)
             {
                 User user = new User(row);
-                dgvMain.Rows.Add(user.ID, user.Login, user.Password, user.Name);
+                int r = dgvMain.Rows.Add(user.ID, user.Login, user.Password, user.Name);
+                dgvMain.Rows[r].Tag = user;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvMain.SelectedRows.Count == 0)
+                return;
+            User u = dgvMain.SelectedRows[0].Tag as User;
+            if(MessageBox.Show ("You want delete user " + u.Name + "?", "Delete user", MessageBoxButtons.YesNo) == DialogResult.Yes) 
+            {
+                u.Delete();
+                UpdateTable();
+            }
+           
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            if(dgvMain.SelectedRows.Count > 0)
+            {
+                User user = dgvMain.SelectedRows [0].Tag as user;
+                new userAddForm(user).ShowDialog();
+                UpdateTable();
             }
         }
     }

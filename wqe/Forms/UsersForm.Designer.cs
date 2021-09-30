@@ -36,6 +36,8 @@ namespace wqe.Forms
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +61,7 @@ namespace wqe.Forms
             this.Column4});
             this.dgvMain.Location = new System.Drawing.Point(12, 41);
             this.dgvMain.Name = "dgvMain";
+            this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMain.Size = new System.Drawing.Size(844, 397);
             this.dgvMain.TabIndex = 1;
             // 
@@ -84,7 +87,7 @@ namespace wqe.Forms
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(179, 11);
+            this.btAdd.Location = new System.Drawing.Point(128, 12);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(75, 23);
             this.btAdd.TabIndex = 2;
@@ -92,15 +95,37 @@ namespace wqe.Forms
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // Form1
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(260, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Удалить";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(377, 12);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(75, 23);
+            this.btnChange.TabIndex = 4;
+            this.btnChange.Text = "Изменить";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 450);
+            this.Controls.Add(this.btnChange);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.btnLoad);
-            this.Name = "Form1";
+            this.Name = "UsersForm";
             this.Text = "p";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.ResumeLayout(false);
@@ -116,6 +141,8 @@ namespace wqe.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnChange;
     }
 }
 

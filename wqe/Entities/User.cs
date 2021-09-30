@@ -21,5 +21,15 @@ namespace wqe.Entities
             Password = Convert.ToString(row["user_password"]);
             Name = Convert.ToString(row["user_name"]);
         }
+        public static void AddUser(string login, string pass, string name)
+        {
+            DBConnect connect = new DBConnect();
+            connect.Select($"INSERT INTO `users` (`user_login`, `user_password`, `user_name`) VALUES ('{login}', '{pass}', '{name}');");
+        }
+        public void Delete()
+        {
+            DBConnect connect = new DBConnect();
+            connect.Select($"DELETE FROM `users` WHERE `user_id` = {ID};");
+        }
     }
 }

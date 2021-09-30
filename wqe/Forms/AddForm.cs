@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wqe.Entities;
 
 namespace wqe.Forms
 {
@@ -19,8 +20,7 @@ namespace wqe.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DBConnect connect = new DBConnect();
-            connect.Select($"INSERT INTO `users` (`user_login`, `user_password`, `user_name`) VALUES ('{tbLogin.Text}', '{tbPass.Text}', '{tbName.Text}');");
+            User.AddUser(tbLogin.Text, tbPass.Text, tbName.Text);
             Close();
         }
     }
