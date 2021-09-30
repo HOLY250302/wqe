@@ -109,8 +109,7 @@ namespace wqe.Forms
             this.Controls.Add(this.LLogin);
             this.Controls.Add(this.LName);
             this.Name = "AddForm";
-            this.Text = "AddForm";
-            this.Load += new System.EventHandler(this.AddForm_Load);
+            this.Text = "AddForm";         
             this.ResumeLayout(false);
             this.PerformLayout();
 

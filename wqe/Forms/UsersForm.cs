@@ -61,12 +61,12 @@ namespace wqe.Forms
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            if(dgvMain.SelectedRows.Count > 0)
-            {
-                User user = dgvMain.SelectedRows [0].Tag as user;
-                new userAddForm(user).ShowDialog();
-                UpdateTable();
-            }
+         //   if(dgvMain.SelectedRows.Count > 0)
+          //  {
+          //      User user = dgvMain.SelectedRows [0].Tag as User;
+              //  new UserAddForm(user).ShowDialog();
+            //    UpdateTable();
+         //   }
         }
     }
 }

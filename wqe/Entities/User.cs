@@ -24,12 +24,17 @@ namespace wqe.Entities
         public static void AddUser(string login, string pass, string name)
         {
             DBConnect connect = new DBConnect();
-            connect.Select($"INSERT INTO `users` (`user_login`, `user_password`, `user_name`) VALUES ('{login}', '{pass}', '{name}');");
+            connect.Select($"INSERT INTO `users` (`user_login`, `user_password`, `user_name`) VALUES ('{login}', '{pass}', '{name}'");
         }
         public void Delete()
         {
             DBConnect connect = new DBConnect();
-            connect.Select($"DELETE FROM `users` WHERE `user_id` = {ID};");
+            connect.Select($"DELETE FROM `users` WHERE `user_id` = {ID}");
+        }
+        public void Change()
+        {
+            DBConnect connect = new DBConnect();
+            connect.Select($"UPDATE `users` SET `user_login` = '{Login}', `user_password` = '{Password}', `user_name` = '{Name}' WHERE (`user_id` = '{ID}'");
         }
     }
 }
